@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-primary: #facc15;
+}
+
+@layer components {
+  .luxury-card {
+    @apply relative bg-zinc-50 border border-zinc-100 rounded-[2rem] p-5
+           flex flex-col justify-between min-h-[200px] active:scale-95 transition-all;
+  }
+
+  .hero-title {
+    @apply text-6xl font-black tracking-tighter leading-[0.8] text-center mt-10 mb-2;
+  }
+
+  .cart-indicator {
+    @apply fixed bottom-6 right-6 z-50 bg-zinc-900 text-white h-14 w-14
+           rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-all;
+  }
+
+  .btn-ticket {
+    @apply w-full bg-primary text-zinc-900 py-5 rounded-2xl font-black 
+           flex items-center justify-center gap-3 shadow-xl active:scale-95 transition-all;
+  }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal-animate {
+  animation: slide-up 0.3s ease-out;
+}
